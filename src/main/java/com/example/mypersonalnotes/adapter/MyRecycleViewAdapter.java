@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.example.mypersonalnotes.Note;
 import com.example.mypersonalnotes.NoteStorage;
 import com.example.mypersonalnotes.R;
 import com.example.mypersonalnotes.view.ViewHolder;
@@ -19,7 +18,6 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter<ViewHolder> {
 
 
     private ViewHolder.NoteClickListener listener;
-    private ArrayList<String> headline;
 
 
     public MyRecycleViewAdapter(ViewHolder.NoteClickListener listener){
@@ -27,9 +25,6 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     }
 
-    public void setHeadlines(ArrayList<String> headlines) {
-        this.headline = headlines;
-    }
 
     @NonNull
     @Override
@@ -44,7 +39,7 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.setData(position);
+        holder.setPosition(position);
     }
 
     @Override
